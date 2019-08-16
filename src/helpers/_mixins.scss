@@ -1,0 +1,46 @@
+
+@mixin change-size-weight($font-size, $font-weight: 400) {
+  font-size: #{$font-size}px;
+  font-weight: $font-weight;
+}
+
+@mixin change-lh-ls($line-height, $letter-spacing: 0.025) {
+  line-height: #{$line-height}px;
+  letter-spacing: #{$letter-spacing}em;
+}
+
+@mixin mq-under-350 {
+  @media (max-width: $screen-small) {
+    @content;
+  }
+}
+
+@mixin mq-under-560 {
+  @media (max-width: $screen-small-medium) {
+    @content;
+  }
+}
+
+@mixin mq-under-768 {
+  @media (max-width: $screen-medium) {
+    @content;
+  }
+}
+
+@mixin mq-under-990 {
+  @media (max-width: $screen-medium-large) {
+    @content;
+  }
+}
+
+@mixin mq-under-1100 {
+  @media (max-width: $screen-large) {
+    @content;
+  }
+}
+
+@mixin mq-under-1350 {
+  @media (max-width: $screen-enormous) {
+    @content;
+  }
+}

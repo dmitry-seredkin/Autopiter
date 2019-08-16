@@ -1,0 +1,12 @@
+
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title
+        link(rel="stylesheet" href=`${htmlWebpackPlugin.files.chunks.main.css}`)
+        //link(rel="stylesheet" href="style.css")
+    body
+        div#app
+        script(src=`${htmlWebpackPlugin.files.chunks.main.entry}`)
+        //script(src='main.js')
