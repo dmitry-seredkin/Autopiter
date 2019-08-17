@@ -6,7 +6,7 @@ export class Input extends React.Component {
     }
 
     handleChange(event) {
-        this.props.onChange(event.target.value);
+        this.props.onInputChange(event.target.value);
     }
 
     render() {

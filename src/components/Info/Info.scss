@@ -1,0 +1,47 @@
+
+.info {
+  padding-top: 40px;
+}
+
+.info__header {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 45px;
+}
+
+.info__body {
+  border-top: 1px solid #DFDFDF;
+  line-height: 26px;
+
+  padding-top: 24px;
+  margin-bottom: 32px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.info__left-column {
+  div:first-child {
+    margin-bottom: 24px;
+  }
+
+  p:first-child {
+    font-weight: bold;
+  }
+}
+
+.info__digits {
+  max-height: 125px;
+  border-radius: 3px;
+  background-color: #F8F8F8;
+
+  padding: 24px;
+
+  p {
+    min-width: 170px;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}

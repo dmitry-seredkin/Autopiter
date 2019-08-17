@@ -1,6 +1,6 @@
 
 .list {
-
+  max-height: 400px;
   width: 100%;
   border-radius: 0 0 3px 3px;
   border: 1px solid #E5E5E5;
@@ -11,6 +11,8 @@
   left: 0;
   top: 42px;
   z-index: -1;
+
+  overflow: auto;
 }
 
 .list__item {
@@ -28,4 +30,8 @@
     font-size: 12px;
     line-height: 17px;
   }
+}
+
+.list__item_focused {
+  background-color: purple;
 }
