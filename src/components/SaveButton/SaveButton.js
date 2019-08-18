@@ -14,11 +14,12 @@ export class SaveButton extends React.Component {
     render() {
         if (this.props.flag) {
             return (
-                <button className="button">
-                    <img src={img} className="button__img"/>Сохранено
-                </button>);
-        } else {
-            return <button className="button button_unsaved" onClick={this.handleClick}>Сохранить</button>;
+                <button className="save-button">
+                    <img src={img} alt="Галочка" className="save-button__img"/>Сохранено
+                </button>
+            );
         }
+        return <button className="save-button save-button_unsaved"
+                       onClick={this.handleClick}>Сохранить</button>;
     }
 }

@@ -1,8 +1,8 @@
 // import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { App } from './components/App';
-import './components/App.scss'
+import { App } from './components/App/App';
+import './components/App/App.scss'
 
 const title = 'React  with Webpack and Babel';
 

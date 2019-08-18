@@ -1,12 +1,21 @@
 
 .info {
-  padding-top: 40px;
+  padding-top: 86px;
+
+  @include mq-under-768 {
+    padding-top: 60px;
+  }
 }
 
 .info__header {
   font-size: 24px;
   font-weight: bold;
   line-height: 45px;
+
+  @include mq-under-768 {
+    font-size: 18px;
+    line-height: 32px;
+  }
 }
 
 .info__body {
@@ -18,6 +27,10 @@
 
   display: flex;
   justify-content: space-between;
+
+  @include mq-under-768 {
+    flex-flow: column;
+  }
 }
 
 .info__left-column {
@@ -27,6 +40,10 @@
 
   p:first-child {
     font-weight: bold;
+  }
+
+  @include mq-under-768 {
+    margin-bottom: 24px;
   }
 }
 
@@ -43,5 +60,7 @@
 
   span {
     font-weight: bold;
+
+    margin-right: 10px;
   }
 }

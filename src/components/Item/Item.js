@@ -15,15 +15,29 @@ export class Item extends React.Component {
         this.props.onItemClick(this.props.index);
     }
 
+    parseData() {
+        return this.props.data.data.address.value.split(', ')
+            .map((elem) => elem.split(' '))
+            .filter((elem) => this.isCity(elem[0]));
+    }
+
+    isCity(value) {
+        const names = ['г', 'село', 'ГОРОД'];
+        return names.some((elem) => value === elem);
+    }
+
     render() {
         const item = this.props.data;
+        let city = this.parseData()[0];
+        city = city ? city : [];
+        let citySpanText = city[0] ? `${city[0][0]}. ${city[1]}` : '';
 
         return (
-            <li className={this.state.style} onFocus={this.handleFocus} onClick={this.handleClick}>
+            <li className="item" onFocus={this.handleFocus} onClick={this.handleClick}>
                 <p>{item.value}</p>
                 <div>
                     <span>{item.data.inn}</span>
-                    <span>{item.data.address.value.split(', ').filter((elem) => elem[0] === 'г')}</span>
+                    <span>{citySpanText}</span>
                 </div>
             </li>
         );

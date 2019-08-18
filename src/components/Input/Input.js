@@ -13,9 +13,12 @@ export class Input extends React.Component {
         // const searchBody = (this.state.value) ? <List answer={this.answer}/> : <span>Пусто</span>;
         const text = this.props.text;
         return (
-            <input value={text}
-                   onChange={this.handleChange}
-                   className="input"/>
+            <label className="searching">Организация или ИП
+                <input value={text}
+                       onChange={this.handleChange}
+                       className="searching__input"/>
+            </label>
+
         );
     }
 }

@@ -41,16 +41,23 @@ export class Suggestion extends React.Component {
         const value = this.state.value;
         const res = this.state.res;
         const index = this.state.cur;
+        const storage = this.props.storage;
 
-        // console.log(`value: ${value}, res: ${res}, index: ${index}`);
 
         let suggestionBody;
         if (res[0]) {
             if (index !== null) {
-                suggestionBody = <Info item={res[index]}/>
+                suggestionBody = <Info onItemSave={this.props.onItemSave} item={res[index]} storage={storage}/>
             } else {
                 suggestionBody = <List array={res} onItemClick={this.handleItemClick}/>;
             }
+        } else {
+            suggestionBody = <div className="suggestion__empty">
+                <p className="suggestion__plus">+</p>
+                <p className="suggestion__advice">
+                    Для добавления новой организации введите ее название, ИНН или адрес.
+                </p>
+            </div>
         }
 
         return (

@@ -1,0 +1,27 @@
+
+.item {
+  min-height: 53px;
+  padding: 7px 0 0 24px;
+
+  p {
+    font-weight: bold;
+    line-height: 20px;
+
+    margin-bottom: 4px;
+  }
+
+  span {
+    font-size: 12px;
+    line-height: 17px;
+
+    margin-right: 20px;
+  }
+
+  &:hover {
+    background-color: #F8F8F8;
+  }
+}
+
+.item_focused {
+  background-color: purple;
+}

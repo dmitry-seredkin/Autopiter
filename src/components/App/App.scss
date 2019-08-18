@@ -1,0 +1,84 @@
+@import "../../helpers/reset";
+@import "../../helpers/variables";
+@import "../../helpers/mixins";
+
+@import "../Suggestion/Suggestion";
+@import "../ChangeButton/ChangeButton";
+@import "../SaveButton/SaveButton";
+@import "../Input/Input";
+@import "../List/List";
+@import "../Info/Info";
+@import "../SavedList/SavedList";
+@import "../Item/Item";
+@import "../SavedItem/SavedItem";
+
+.app {
+  max-width: 1440px;
+  background-color: #E5E5E5;
+
+  font: 14px Verdana, Arial, sans-serif;
+
+  padding-bottom: 203px;
+  margin: auto;
+
+  @include mq-under-768 {
+    padding-bottom: 50px;
+  }
+}
+
+.app__header {
+  height: 80px;
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app__content {
+  display: flex;
+  justify-content: center;
+}
+
+.app__wrapper {
+  min-width: 736px;
+  margin-top: 56px;
+
+  @include mq-under-768 {
+    max-width: 435.7px;
+    min-width: 320px;
+    margin-top: 20px;
+  }
+}
+
+.app__h1 {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 49px;
+  color:  #2B2829;
+
+  margin-bottom: 32px;
+
+  @include mq-under-768 {
+    font-size: 30px;
+    text-align: center;
+
+    margin-bottom: 20px;
+  }
+}
+
+.app__body {
+  min-height: 568px;
+  max-width: 736px;
+  width: 100%;
+
+  background-color: white;
+
+  padding: 32px 24px;
+}
+
+.app__buttons {
+  @include mq-under-768 {
+    margin-bottom: 5px;
+  }
+}

@@ -4,14 +4,12 @@ export class Info extends React.Component {
     constructor(props) {
         super(props);
         this.info = this.parseData();
-        this.state = {isSaved: false};
+        this.state = {isSaved: this.checkLocalStorage()};
         this.handleSaveButtonClick = this.handleSaveButtonClick.bind(this);
     }
 
     handleSaveButtonClick() {
-        let org = JSON.parse(localStorage.getItem('savedOrg'));
-        org.push(this.props.item.value);
-        localStorage.setItem('savedOrg', JSON.stringify(org));
+        this.props.onItemSave(this.info);
         this.setState({isSaved: true});
     }
 
@@ -23,8 +21,19 @@ export class Info extends React.Component {
             director: item.data.management ? item.data.management.name : '',
             inn: item.data.inn ? item.data.inn : '',
             kpp: item.data.kpp ? item.data.kpp : '',
-            ogrn: item.data.ogrn ? item.data.ogrn : ''
+            ogrn: item.data.ogrn ? item.data.ogrn : '',
         };
+    }
+
+    checkLocalStorage() {
+        let itemArray = Object.values(this.info);
+        return this.props.storage.some((elem) => {
+            let elemArray = Object.values(elem);
+            for (let i = 0; i < itemArray.length; i++) {
+                if (itemArray[i] !== elemArray[i]) return false;
+            }
+            return true;
+        });
     }
 
     render() {
@@ -46,9 +55,9 @@ export class Info extends React.Component {
                         </div>
                     </div>
                     <div className="info__digits">
-                        <p><span>ИНН</span>  {item.inn}</p>
-                        <p><span>КПП</span>  {item.kpp}</p>
-                        <p><span>ОГРН</span>  {item.ogrn}</p>
+                        <p><span>ИНН</span>{item.inn}</p>
+                        <p><span>КПП</span>{item.kpp}</p>
+                        <p><span>ОГРН</span>{item.ogrn}</p>
                     </div>
                 </div>
                 <SaveButton onSaveButtonClick={this.handleSaveButtonClick} flag={isSaved}/>
